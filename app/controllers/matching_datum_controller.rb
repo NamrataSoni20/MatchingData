@@ -26,12 +26,4 @@ class MatchingDatumController < ApplicationController
         params.require(:matching_datum).permit(:email, :file)
     end 
 
-    def get_label(value)
-        if value
-           return "Url Matched"
-        else 
-           return "Url does not matched"
-        end 
-    end
-
 end 

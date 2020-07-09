@@ -48,6 +48,14 @@ class MatchingDatum < ApplicationRecord
         end
     end 
 
+    def get_label(value)
+        if value
+           return "Url Matched"
+        else 
+           return "Url does not matched"
+        end 
+    end
+    
     class << self
         def get_data_from(data_url)
             response = HTTParty.get(data_url)
