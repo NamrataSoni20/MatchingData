@@ -1,0 +1,17 @@
+<%= form_with url: "/matching_datum", scope: "matching_datum", local: true do |form| %>
+    <% if @matching_datum.errors.any? %>
+        <ul>
+        <% @matching_datum.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+        <% end %>
+        </ul>
+    <% end %>
+    <%= form.label :email, 'Email' %>
+    <%= form.text_field :email %>
+
+    <%= form.label :file, 'Upload Excel File' %>
+    <%= form.file_field :file %>
+
+    <%= form.submit "Send Email" %>
+
+<% end %>
